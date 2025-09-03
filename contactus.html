@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPA Consultancy - Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="gg.jpg" alt="ppa logo">Consultancy
+                <div class="logo-subtitle">Pre & Post Award</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                
+    <li>
+    <a href="services.html">Services</a>
+    <ul class="dropdown">
+        <li><a href="services.html#feasibility">Feasibility Study</a></li>
+        <li><a href="services.html#cost">Cost Control</a></li>
+        <li><a href="services.html#scheduling">Scheduling</a></li>
+        <li><a href="services.html#risk">Risk Management</a></li>
+        <li><a href="services.html#performance">Performance Monitoring</a></li>
+        <li><a href="services.html#change">Change Management</a></li>
+    </ul>
+</li>
+                <li>
+    <a href="industries.html">Industries</a>
+    <ul class="dropdown">
+        <li><a href="industries.html#oil-gas">Oil & Gas</a></li>
+        <li><a href="industries.html#transportation">Transportation</a></li>
+        <li><a href="industries.html#mining">Mining</a></li>
+        <li><a href="industries.html#marineworks">Marine Works</a></li>
+        <li><a href="industries.html#infrastructure">Infrastructure</a></li>
+    </ul>
+</li>
+
+<li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <span>Contact Us</span>
+        </div>
+    </div>
+
+    <!-- Contact Page Hero -->
+    <section class="hero contact-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="compact-title">Get In Touch</h1>
+            <p class="compact-subtitle">We're here to help with your project needs. Reach out and let's start a conversation.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="contact-form-section">
+        <div class="container">
+            <div class="form-container compact-form-container">
+                <h2 class="compact-form-title">Contact Us</h2>
+                <p class="form-subtitle compact-form-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+                
+                <form action="https://formspree.io/f/mkgvvbbk" method="POST" class="contact-form compact-form-fields">
+
+                    <!-- Personal Information - VERTICAL LAYOUT -->
+                    <div class="form-section">
+                        <h3 class="compact-section-title">Your Information</h3>
+                        <div class="form-vertical">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required class="compact-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="compact-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="compact-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company" class="compact-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject Options -->
+                    <div class="form-section">
+                        <h3 class="compact-section-title">Subject</h3>
+                        <p class="section-description compact-description">What is the nature of your inquiry?</p>
+                        <div class="options-grid compact-options">
+                            <div class="option-card compact-option">
+                                <input type="radio" id="inquiry" name="subject" value="general-inquiry" class="option-input">
+                                <label for="inquiry" class="option-label compact-option-label">
+                                    <div class="option-icon compact-option-icon">
+                                        <i class="fas fa-question-circle"></i>
+                                    </div>
+                                    <h4>General Inquiry</h4>
+                                    <p>Have questions about our services?</p>
+                                </label>
+                            </div>
+                            <div class="option-card compact-option">
+                                <input type="radio" id="consultation" name="subject" value="request-consultation" class="option-input">
+                                <label for="consultation" class="option-label compact-option-label">
+                                    <div class="option-icon compact-option-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <h4>Request Consultation</h4>
+                                    <p>Schedule a meeting with our experts</p>
+                                </label>
+                            </div>
+                            <div class="option-card compact-option">
+                                <input type="radio" id="feedback" name="subject" value="feedback-complaint" class="option-input">
+                                <label for="feedback" class="option-label compact-option-label">
+                                    <div class="option-icon compact-option-icon">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </div>
+                                    <h4>Feedback/Complaint</h4>
+                                    <p>Share your experience with us</p>
+                                </label>
+                            </div>
+                            <div class="option-card compact-option">
+                                <input type="radio" id="other" name="subject" value="other" class="option-input">
+                                <label for="other" class="option-label compact-option-label">
+                                    <div class="option-icon compact-option-icon">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </div>
+                                    <h4>Other</h4>
+                                    <p>Something else we can help with</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How can we help -->
+                    <div class="form-section">
+                        <h3 class="compact-section-title">How Can We Help?</h3>
+                        <div class="form-group">
+                            <label for="message">Please describe briefly how we can assist you *</label>
+                            <textarea id="message" name="message" rows="3" required class="compact-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Preferred Contact Method -->
+                    <div class="form-section">
+                        <h3 class="compact-section-title">Preferred Contact Method</h3>
+                        <p class="section-description compact-description">How would you prefer us to reach out to you?</p>
+                        <div class="options-grid compact-options contact-methods">
+                            <div class="option-card compact-option">
+                                <input type="radio" id="contact-email" name="contact-method" value="email" class="option-input">
+                                <label for="contact-email" class="option-label compact-option-label">
+                                    <div class="option-icon compact-option-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <h4>Email</h4>
+                                </label>
+                            </div>
+                            <div class="option-card compact-option">
+                                <input type="radio" id="contact-phone" name="contact-method" value="phone" class="option-input">
+                                <label for="contact-phone" class="option-label compact-option-label">
+                                    <div class="option-icon compact-option-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <h4>Phone Call</h4>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consent -->
+                    <div class="form-section consent-section">
+                        <div class="consent-box compact-consent">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">
+                                By submitting this form, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>. *
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-submit">
+                        <button type="submit" class="submit-button compact-button">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2 class="compact-contact-title">Other Ways to Reach Us</h2>
+            <div class="contact-info-grid compact-contact-grid">
+                <div class="contact-info-item compact-contact-item">
+                    <div class="contact-icon compact-contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <strong>Email</strong>
+                    <p>info@ppaconsultancy.com</p>
+                </div>
+                <div class="contact-info-item compact-contact-item">
+                    <div class="contact-icon compact-contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <strong>Phone</strong>
+                    <p>+1 437 230 5717</p>
+                </div>
+                <div class="contact-info-item compact-contact-item">
+                    <div class="contact-icon compact-contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <strong>Address</strong>
+                    <p>Toronto, Ontario, Canada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PPA Consultancy</h4>
+                    <p>Pre & Post Award Project Controls & Management Services</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p>Cost Control • Scheduling • Risk Management • Performance Monitoring</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Industries</h4>
+                    <p>Oil & Gas • Mining • Infrastructure • Transportation • Marine Works</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #374151; padding-top: 2rem;">
+                <p>&copy; 2025 PPA Consultancy. All rights reserved. | Where Precision Meets Performance</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
