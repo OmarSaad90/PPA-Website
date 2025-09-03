@@ -430,7 +430,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: left;
-    background-image: url('serv.jpg');
+    background-image: url('services/serv.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1173,7 +1173,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('industries.jpg');
+    background-image: url('industries2/industries.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
