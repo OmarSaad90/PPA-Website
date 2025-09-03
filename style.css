@@ -13,6 +13,10 @@ body {
     padding-top: 100px;
 }
 
+body.home-page {
+    padding-top: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -356,6 +360,7 @@ section {
     margin: 0 auto 1.5rem;
     line-height: 1.8;
 }
+
 
 /* Motto Section */
 .motto {
@@ -970,14 +975,14 @@ section {
 
 .stat-label {
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: #EAEAEA;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .stat-description {
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: #EAEAEA;
     margin-top: 0.5rem;
 }
 
@@ -1997,6 +2002,10 @@ button.submit-button.compact-button:hover {
     .hero-subtitle {
         font-size: 1.2rem;
     }
+
+.why-choose-description {
+    color: white;
+}
 .hero-stats {
     display: flex;
     justify-content: center;
