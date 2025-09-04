@@ -264,7 +264,7 @@ nav .container {
 
 /* About Us Section */
 .about-us {
-    background: #f8fafc;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 .about-us-content {
@@ -420,7 +420,7 @@ section {
    Services Section
 ======================== */
 .services {
-    background: #f8fafc;
+     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
@@ -936,60 +936,107 @@ section {
 }
 
 /* Why Choose Us Section */
-.why-choose {
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    color: white;
-    text-align: center;
-}
+  .why-choose {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 25%, #475569 50%, #334155 75%, #1e293b 100%);
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            overflow: hidden;
+        }
+          .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
 
-.why-choose .section-title {
-    color: white;
-}
+ .why-choose .section-title {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+  .why-choose .container {
+            position: relative;
+            z-index: 2;
+        }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
+ .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 .stat {
     text-align: center;
     min-width: 120px; /* Slightly smaller */
 }
 
-.stat-card {
-    background: rgba(255,255,255,0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-}
+   .stat-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+         .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6);
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
 
 .stat-number {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-}
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-.stat-label {
-    font-size: 0.9rem;
-    color: #EAEAEA;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+ .stat-label {
+            font-size: 1rem;
+            color: #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
 
 .stat-description {
-    font-size: 0.9rem;
-    color: #EAEAEA;
-    margin-top: 0.5rem;
-}
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+        .why-choose-description {
+            margin-top: 3rem;
+            color: white !important;
+        }
 
 /* Commitment Section */
 .commitment {
     padding: 80px 20px;
-    background: #f0f4f8;  /* light neutral */
+     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);  /* light neutral */
 }
 .commitment .section-title {
     color: white;
@@ -1918,6 +1965,10 @@ button.submit-button.compact-button:hover {
 .contact-info-item.compact-contact-item p {
     color: #cbd5e1;
     font-size: 0.95rem; /* Smaller text */
+}
+.services-text h2{
+    font-size:2.8rem;
+    font-weight: 700px;
 }
 @media (max-width: 768px) {
     .nav-links {
