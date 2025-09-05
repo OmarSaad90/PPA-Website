@@ -17,8 +17,123 @@
   const qsa = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+  // Search functionality for Services page ----------------
+  function setupServiceSearch() {
+    const searchBtn = qs('#search-btn');
+    const searchInput = qs('#service-search');
+    
+    if (!searchBtn || !searchInput) return;
+    
+    const performSearch = (e) => {
+        e.preventDefault();
+        const query = searchInput.value.toLowerCase().trim();
+        
+        if (!query) return;
+        
+        const services = qsa('.service-card');
+        let found = false;
+        
+        services.forEach(service => {
+            const titleElement = qs('.service-text h3', service);
+            const textContent = qs('.service-text p', service);
+            const listItems = qsa('.service-text ul li', service);
+            
+            if (!titleElement) return;
+            
+            const title = titleElement.textContent.toLowerCase();
+            const text = textContent ? textContent.textContent.toLowerCase() : '';
+            const listText = listItems.map(li => li.textContent.toLowerCase()).join(' ');
+            
+            const searchableContent = title + ' ' + text + ' ' + listText;
+            
+            if (searchableContent.includes(query)) {
+                service.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                service.style.background = '#f0f7ff';
+                service.style.border = '2px solid #3b82f6';
+                service.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    service.style.background = '';
+                    service.style.border = '';
+                }, 3000);
+                
+                found = true;
+                return;
+            }
+        });
+        
+        if (!found) {
+            alert('No matching service found. Try terms like "cost", "scheduling", "risk", "feasibility", "change", or "performance".');
+        }
+    };
+    
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch(e);
+        }
+    });
+  }
+
+  // Search functionality for Industries page --------------
+  function setupIndustrySearch() {
+    const searchBtn = qs('#search-btn');
+    const searchInput = qs('#industry-search');
+    
+    if (!searchBtn || !searchInput) return;
+    
+    const performSearch = (e) => {
+        e.preventDefault();
+        const query = searchInput.value.toLowerCase().trim();
+        
+        if (!query) return;
+        
+        const industries = qsa('.industry-card');
+        let found = false;
+        
+        industries.forEach(industry => {
+            const titleElement = qs('.industry-text h3', industry);
+            const textContent = qs('.industry-text p', industry);
+            const listItems = qsa('.industry-text ul li', industry);
+            
+            if (!titleElement) return;
+            
+            const title = titleElement.textContent.toLowerCase();
+            const text = textContent ? textContent.textContent.toLowerCase() : '';
+            const listText = listItems.map(li => li.textContent.toLowerCase()).join(' ');
+            
+            const searchableContent = title + ' ' + text + ' ' + listText;
+            
+            if (searchableContent.includes(query)) {
+                industry.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                industry.style.background = '#f0f7ff';
+                industry.style.border = '2px solid #3b82f6';
+                industry.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    industry.style.background = '';
+                    industry.style.border = '';
+                }, 3000);
+                
+                found = true;
+                return;
+            }
+        });
+        
+        if (!found) {
+            alert('No matching industry found. Try terms like "oil", "gas", "transportation", "mining", "marine", or "infrastructure".');
+        }
+    };
+    
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch(e);
+        }
+    });
+  }
 
   // Smooth scrolling for nav links -------------------------
   function setupSmoothScroll() {
@@ -310,19 +425,8 @@
     setupRevealOnScroll();
     setupCounters();
     setupCarousel();
+    setupServiceSearch();
+    setupIndustrySearch();
   });
-})();
-document.getElementById('search-btn').addEventListener('click', (e) => {
-    e.preventDefault();
-    const query = document.getElementById('service-search').value.toLowerCase();
-    const services = document.querySelectorAll('.service-card');
 
-    services.forEach(service => {
-        const text = service.querySelector('.service-text h3').textContent.toLowerCase();
-        if (text.includes(query)) {
-            service.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            service.style.background = 'rgba(59, 130, 246, 0.1)'; // highlight
-            setTimeout(() => service.style.background = 'transparent', 1500);
-        }
-    });
-});
+})();
