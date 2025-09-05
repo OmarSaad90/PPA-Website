@@ -16,7 +16,17 @@ body {
 body.home-page {
     padding-top: 0;
 }
-
+.home-page nav,
+nav {
+    background: rgba(15, 23, 42, 0.95) !important;
+}
+.home-page nav.scrolled,
+nav.scrolled {
+    background: rgba(15, 23, 42, 0.98) !important;
+}
+nav, nav.scrolled {
+  border-bottom: none !important;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -28,7 +38,7 @@ nav {
     position: fixed;
     top: 0; 
     width: 100%; 
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.95) !important; /* Added !important to ensure priority */
     backdrop-filter: blur(20px);
     z-index: 1000;
     padding: 0.8rem 0;
@@ -37,7 +47,7 @@ nav {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 nav.scrolled {
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(15, 23, 42, 0.98) !important; /* Added !important */
     padding: 0.5rem 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(59, 130, 246, 0.5);
@@ -74,7 +84,7 @@ nav .container {
 .logo-title {
     font-size: 1.9rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #ffffff !important;
     line-height: 1.1;
 }
 .logo:hover img {
@@ -84,10 +94,16 @@ nav .container {
 
 .logo-subtitle {
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: #94a3b8 !important;
     font-weight: 500;
     margin-top: 2px;
     letter-spacing: 0.5px;
+}
+.nav-links ul,
+.nav-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links {
@@ -105,7 +121,7 @@ nav .container {
     position: absolute;
     top: 120%;
     left: 0;
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(15, 23, 42, 0.98) !important;
     backdrop-filter: blur(20px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     border-radius: 12px;
@@ -122,13 +138,15 @@ nav .container {
 .nav-links .dropdown li a {
     display: block;
     padding: 0.8rem 1.5rem;
-    color: #cbd5e1;
+    background: rgba(15, 23, 42, 0.98) !important;
+    color: #cbd5e1 !important;
     font-weight: 500;
     font-size: 14px;
     transition: all 0.3s ease;
     border-radius: 0;
     margin: 0 0.5rem;
     position: relative;
+    border: 1px solid rgba(59, 130, 246, 0.2);
     overflow: hidden;
 }
 
@@ -146,8 +164,8 @@ nav .container {
     left: 100%;
 }
 .nav-links .dropdown li a:hover {
-    background: rgba(59, 130, 246, 0.15);
-    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.15) !important;
+    color: #60a5fa !important;
     transform: translateX(5px);
     border-radius: 8px;
 }
@@ -161,7 +179,7 @@ nav .container {
     transform: translateY(0) scale(1);
 }
 .nav-links a {
-    color: #e2e8f0;
+    color: #e2e8f0 !important; /* Force consistent link color */
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -171,7 +189,7 @@ nav .container {
 }
 
 .nav-links a:hover {
-    color: #60a5fa;
+    color: #60a5fa !important; /* Force consistent hover color */
     background: rgba(59, 130, 246, 0.1);
     transform: translateY(-1px);
 }
@@ -1625,6 +1643,7 @@ section {
 }
 .contact-info-item p {
     color: #cbd5e1;
+    text-align: center;
     font-size: 1rem;
 }
 .contact-page-button {

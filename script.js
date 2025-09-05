@@ -23,16 +23,19 @@
   function setupServiceSearch() {
     const searchBtn = qs('#search-btn');
     const searchInput = qs('#service-search');
+    const searchForm = qs('.search-box'); // Get the form element
     
     if (!searchBtn || !searchInput) return;
     
     const performSearch = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form submission/page refresh
+        
         const query = searchInput.value.toLowerCase().trim();
         
         if (!query) return;
         
-        const services = qsa('.service-card');
+        // Look for service cards in the services-detail section
+        const services = qsa('#services-detail .service-card');
         let found = false;
         
         services.forEach(service => {
@@ -69,13 +72,18 @@
         }
     };
     
+    // IMPORTANT: Prevent form submission
+    if (searchForm) {
+        searchForm.addEventListener('submit', performSearch);
+    }
+    
     searchBtn.addEventListener('click', performSearch);
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             performSearch(e);
         }
     });
-  }
+}
 
   // Search functionality for Industries page --------------
   function setupIndustrySearch() {
