@@ -225,7 +225,21 @@ nav .container {
     position: relative;
     overflow: hidden;
 }
-
+.hero-subtitle-extended {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.8rem;
+    animation: slideInLeft 1s ease-out 0.2s both, subtlePulse 4s ease-in-out infinite;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    max-width: 500px; /* Reduced width */
+    text-transform: none;
+    text-align: left;
+    margin-left: 0; /* Ensure it starts from the left edge */
+}
 .hero-video {
     position: absolute;
     top: 0;
@@ -234,8 +248,8 @@ nav .container {
     height: 100%;
     object-fit: cover;
     z-index: -2;
+    transform: translateY(+6.5%); /* This pushes the video down by 10% of its height */
 }
-
 .hero::before {
     content: '';
     position: absolute;
@@ -254,7 +268,8 @@ nav .container {
     color: white;
     text-align: left;
     margin: 0;
-    padding-right: 800px;
+    padding-right: 700px; /* Increased to push content further left */
+    width: 100%;
 }
 .hero-image {
     flex: 1;
@@ -264,9 +279,9 @@ nav .container {
 .hero-content h1 {
     display: inline-block;
     margin-bottom: 1rem;
-    font-size: 4rem;
+    font-size: 6rem; /* Increased from 4rem */
     font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 25%, #3b82f6 50%, #1d4ed8 75%, #ffffff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 20%, #bae6fd 40%, #7dd3fc 60%, #38bdf8 80%, #0ea5e9 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -280,7 +295,7 @@ nav .container {
 
 .hero-subtitle {
     display: block;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
     color: #ffffff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
@@ -289,6 +304,21 @@ nav .container {
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
+}
+.hero-subtitle-extended {
+    display: block;
+    font-size: 2.2rem; /* Keep your bigger size */
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.8rem;
+    animation: slideInLeft 1s ease-out 0.2s both, subtlePulse 4s ease-in-out infinite;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    max-width: 650px; /* Increased from 500px to give more room */
+    text-transform: none;
+    text-align: left;
+    margin-left: 0;
 }
 .hero-subtitle::before {
     position: absolute;
