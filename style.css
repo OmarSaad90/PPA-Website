@@ -2352,12 +2352,10 @@ blockquote {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%, #f8fafc 100%);
     background-size: 400% 400%;
     animation: gradientShift 18s ease infinite;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem; /* This adds proper spacing between cards */
     padding: 5rem 2rem;
     position: relative;
     overflow: hidden;
+    display: block; /* Change from flex */
 }
 .about-detail::before {
     content: '';
@@ -2376,14 +2374,37 @@ blockquote {
 
 .about-card {
     display: flex;
-    gap: 1.5rem; /* Reduced further */
+    gap: 1.5rem;
     background: white;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    padding: 1.5rem; /* Reduced from 2rem */
+    padding: 1.5rem;
     align-items: center;
-    max-width: 800px; /* Reduced from 900px */
-    margin: 0 auto 2rem auto; /* Reduced margin */
+    max-width: 800px;
+    position: relative;
+}
+#team.about-card {
+    margin: 0 auto 4rem auto;
+}
+
+/* Story card - left aligned, overlaps */
+#story.about-card {
+    margin: -2rem 0 4rem 0; /* Left aligned with upward overlap */
+}
+
+/* Mission card - right aligned, overlaps */
+#mission.about-card {
+    margin: -2rem 0 4rem auto; /* Right aligned with upward overlap */
+}
+
+/* Vision card - left aligned, overlaps */
+#vision.about-card {
+    margin: -2rem 0 4rem 0; /* Left aligned with upward overlap */
+}
+
+/* Values card - right aligned, overlaps */
+#values.about-card {
+    margin: -2rem 0 4rem auto; /* Right aligned with upward overlap */
 }
 .about-card::before {
     content: '';
@@ -3043,7 +3064,115 @@ button.submit-button.compact-button:hover {
 .hamburger.active span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+/* ========================
+   TABLET OPTIMIZATION (769px - 1024px)
+======================== */
 
+@media (max-width: 1024px) and (min-width: 769px) {
+  
+  /* Navigation adjustments for tablets */
+  .nav-links {
+    gap: 2rem;
+    font-size: 15px;
+  }
+  
+  .logo-title {
+    font-size: 1.7rem;
+  }
+
+  /* Hero section */
+  .hero-content {
+    padding-right: 400px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.8rem;
+  }
+  
+  .hero-combined-text {
+    max-width: 600px !important;
+    width: 600px;
+  }
+
+  /* Services grid - 2 columns for tablets */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    max-width: 100%;
+  }
+  
+  .service-card-home {
+    padding: 1.3rem;
+  }
+
+  /* Industries carousel */
+  .carousel-slide {
+    height: 350px;
+  }
+  
+  .industry-tab {
+    padding: 2rem;
+  }
+
+  /* About us cards - keep staggered but adjust spacing */
+  .about-card {
+    max-width: 700px;
+    gap: 1.2rem;
+  }
+  
+  .about-image {
+    max-width: 220px;
+    height: 280px;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Associations */
+  .associations-grid {
+    gap: 3rem;
+  }
+  
+  .association-logo img {
+    height: 70px;
+  }
+
+  /* Industries detail */
+  .industry-card {
+    gap: 2rem;
+    padding: 1.8rem;
+    max-width: 900px;
+  }
+  
+  .industry-image {
+    height: 280px;
+  }
+
+  /* Services detail */
+  .service-card {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  /* Contact form */
+  .compact-form-container {
+    max-width: 700px;
+    padding: 1.8rem;
+  }
+  
+  .options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
 /* ========================
    MOBILE OPTIMIZATION (0-768px)
    Complete replacement for all pages
@@ -3273,12 +3402,13 @@ button.submit-button.compact-button:hover {
     gap: 2rem;
   }
   
-  .about-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
+.about-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        margin: 0 auto 2rem auto !important; /* This overrides all the staggered positioning */
+        max-width: 100%;
+    }
   
   .about-card.reverse {
     flex-direction: column;
