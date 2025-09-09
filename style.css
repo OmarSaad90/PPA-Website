@@ -233,25 +233,27 @@ nav .container {
 .hero-combined-text p {
     font-size: 1.1rem;
     color: #ffffff;
-    line-height: 1.5;
-text-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.8),
-        0 0 15px rgba(255, 255, 255, 0.4),
-        0 0 30px rgba(59, 130, 246, 0.3),
-        0 0 40px rgba(59, 130, 246, 0.2);
+    line-height: 1.4;
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.7),           /* Reduced blur and opacity */
+        0 0 8px rgba(255, 255, 255, 0.2),       /* Reduced blur and opacity */
+        0 0 15px rgba(59, 130, 246, 0.2),       /* Reduced blur and opacity */
+        0 0 25px rgba(59, 130, 246, 0.15);      /* Reduced blur and opacity */
     margin-bottom: 0;
     font-weight: 500;
-    text-align: left !important;
-    text-justify: none !important;
-    hyphens: none !important;
-    -webkit-hyphens: none !important;
-    -moz-hyphens: none !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    word-break: break-all;
+    hyphens: auto !important;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
     letter-spacing: 0.3px;
-    word-spacing: normal;
+    word-spacing: normal !important;
     animation: slideInLeft 1s ease-out 0.2s both;
-     max-width: none !important;
-     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    max-width: none !important;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2)); /* Reduced filter intensity */
 }
+
 .hero-video {
     position: absolute;
     top: 0;
@@ -627,8 +629,7 @@ section {
 .section-description,
 .why-choose-description,
 .commitment-text p,
-.contact-info-section p,
-.hero p {
+.contact-info-section p {
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
@@ -646,6 +647,9 @@ section {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     word-wrap: break-word;
+    word-break: normal;
+    word-spacing: normal;
+    line-height: 1.6;
 }
 
 /* Industry tabs text */
@@ -1313,14 +1317,18 @@ section {
     font-size: 0.95rem; /* Slightly smaller text */
     color: #4b5563;
     line-height: 1.4; /* Tighter line spacing */
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    text-align: left; /* Changed from justify */
+    text-justify: none; /* Changed from inter-word */
+    hyphens: none; /* Changed from auto */
+    -webkit-hyphens: none; /* Changed from auto */
+    -moz-hyphens: none; /* Changed from auto */
     word-wrap: break-word;
     flex: 1;
     overflow: hidden; /* Prevent text overflow */
+    word-break: normal;
+    word-spacing: normal;
+    /* Add these for better control */
+    text-rendering: optimizeLegibility; /* Improves text rendering */
 }
 .service-card-home .service-image {
     width: 100%;
@@ -2021,14 +2029,24 @@ blockquote {
 .industries-hero .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+       text-align: left !important;
+    text-justify: none !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
 }
 
 .industries-hero .hero-content p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
+    text-align: justify;
+    text-justify: inter-word;
+    word-break: break-all;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    width: 100%;
 }
-
 /* Industries Search Section */
 .industries-search {
     padding: 3rem 1rem;
