@@ -2204,9 +2204,9 @@ blockquote {
 }
 #oil-gas .industry-text h3::before {
     background: linear-gradient(135deg, #f59e0b, #d97706), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/></svg>');
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: 100%, 60%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
 }
 
 #transportation .industry-text h3::before {
