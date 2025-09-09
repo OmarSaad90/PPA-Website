@@ -2919,6 +2919,15 @@ button.submit-button.compact-button:hover {
     color: white;
     text-align: center;
 }
+.footer-content a {
+  color: #cbd5e1;        /* make the link text white */
+  text-decoration: none; /* remove underline */
+}
+
+.footer-content a:hover {
+  text-decoration: underline; /* optional: underline on hover */
+}
+
 
 .contact-info-section h2.compact-contact-title {
     font-size: 1.8rem; /* Smaller title */
@@ -3235,6 +3244,7 @@ button.submit-button.compact-button:hover {
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
+    padding-right: 60px;
   }
   /* Services detail page */
   .services-detail {
