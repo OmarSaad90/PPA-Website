@@ -234,11 +234,6 @@ nav .container {
     font-size: 1.1rem;
     color: #ffffff;
     line-height: 1.4;
-    text-shadow: 
-        0 2px 6px rgba(0, 0, 0, 0.7),           /* Reduced blur and opacity */
-        0 0 8px rgba(255, 255, 255, 0.2),       /* Reduced blur and opacity */
-        0 0 15px rgba(59, 130, 246, 0.2),       /* Reduced blur and opacity */
-        0 0 25px rgba(59, 130, 246, 0.15);      /* Reduced blur and opacity */
     margin-bottom: 0;
     font-weight: 500;
     text-align: justify !important;
@@ -251,7 +246,6 @@ nav .container {
     word-spacing: normal !important;
     animation: slideInLeft 1s ease-out 0.2s both;
     max-width: none !important;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2)); /* Reduced filter intensity */
 }
 
 .hero-video {
@@ -3086,111 +3080,7 @@ button.submit-button.compact-button:hover {
    TABLET OPTIMIZATION (769px - 1024px)
 ======================== */
 
-@media (max-width: 1024px) and (min-width: 769px) {
-  
-  /* Navigation adjustments for tablets */
-  .nav-links {
-    gap: 2rem;
-    font-size: 15px;
-  }
-  
-  .logo-title {
-    font-size: 1.7rem;
-  }
 
-  /* Hero section */
-  .hero-content {
-    padding-right: 400px;
-  }
-  
-  .hero-content h1 {
-    font-size: 3.8rem;
-  }
-  
-  .hero-combined-text {
-    max-width: 600px !important;
-    width: 600px;
-  }
-
-  /* Services grid - 2 columns for tablets */
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
-    max-width: 100%;
-  }
-  
-  .service-card-home {
-    padding: 1.3rem;
-  }
-
-  /* Industries carousel */
-  .carousel-slide {
-    height: 350px;
-  }
-  
-  .industry-tab {
-    padding: 2rem;
-  }
-
-  /* About us cards - keep staggered but adjust spacing */
-  .about-card {
-    max-width: 700px;
-    gap: 1.2rem;
-  }
-  
-  .about-image {
-    max-width: 220px;
-    height: 280px;
-  }
-
-  /* Stats grid */
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  /* Associations */
-  .associations-grid {
-    gap: 3rem;
-  }
-  
-  .association-logo img {
-    height: 70px;
-  }
-
-  /* Industries detail */
-  .industry-card {
-    gap: 2rem;
-    padding: 1.8rem;
-    max-width: 900px;
-  }
-  
-  .industry-image {
-    height: 280px;
-  }
-
-  /* Services detail */
-  .service-card {
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  /* Contact form */
-  .compact-form-container {
-    max-width: 700px;
-    padding: 1.8rem;
-  }
-  
-  .options-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Footer */
-  .contact-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
 /* ========================
    MOBILE OPTIMIZATION (0-768px)
    Complete replacement for all pages
@@ -3319,18 +3209,40 @@ button.submit-button.compact-button:hover {
   .services-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
-  
   .service-card-home {
     padding: 1rem;
     margin-bottom: 1rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
-  
   .service-card-home .service-image {
     height: 180px;
+    width: 100%;
+    overflow: hidden; /* This contains the image */
+    border-radius: 8px;
+    margin: 0 auto 1rem auto; /* Centers the container */
+    position: relative;
   }
   
+    .service-card-home .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 !important; /* Reset any margins */
+    padding: 0 !important; /* Reset any padding */
+    max-width: 100% !important; /* Ensure it doesn't overflow */
+    border-radius: 8px;
+    position: relative;
+    left: 0;
+    transform: none !important;
+  }
   /* Services detail page */
   .services-detail {
     padding: 2rem 1rem;
@@ -3593,4 +3505,109 @@ html {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  
+  /* Navigation adjustments for tablets */
+  .nav-links {
+    gap: 2rem;
+    font-size: 15px;
+  }
+  
+  .logo-title {
+    font-size: 1.7rem;
+  }
+
+  /* Hero section */
+  .hero-content {
+    padding-right: 400px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.8rem;
+  }
+  
+  .hero-combined-text {
+    max-width: 600px !important;
+    width: 600px;
+  }
+
+  /* Services grid - 2 columns for tablets */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    max-width: 100%;
+  }
+  
+  .service-card-home {
+    padding: 1.3rem;
+  }
+
+  /* Industries carousel */
+  .carousel-slide {
+    height: 350px;
+  }
+  
+  .industry-tab {
+    padding: 2rem;
+  }
+
+  /* About us cards - keep staggered but adjust spacing */
+  .about-card {
+    max-width: 700px;
+    gap: 1.2rem;
+  }
+  
+  .about-image {
+    max-width: 220px;
+    height: 280px;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Associations */
+  .associations-grid {
+    gap: 3rem;
+  }
+  
+  .association-logo img {
+    height: 70px;
+  }
+
+  /* Industries detail */
+  .industry-card {
+    gap: 2rem;
+    padding: 1.8rem;
+    max-width: 900px;
+  }
+  
+  .industry-image {
+    height: 280px;
+  }
+
+  /* Services detail */
+  .service-card {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  /* Contact form */
+  .compact-form-container {
+    max-width: 700px;
+    padding: 1.8rem;
+  }
+  
+  .options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 }
