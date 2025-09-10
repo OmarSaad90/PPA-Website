@@ -331,6 +331,7 @@ nav .container {
 }
 
 
+
 .hero-subtitle {
     display: block;
     font-size: 2rem;
@@ -3106,8 +3107,7 @@ button.submit-button.compact-button:hover {
   .hamburger {
     display: flex;
   }
-  
-  .nav-links {
+ .nav-links {
     position: fixed;
     top: 70px;
     left: -100%;
@@ -3123,7 +3123,6 @@ button.submit-button.compact-button:hover {
     gap: 0;
     overflow-y: auto;
   }
-  
   .nav-links.active {
     left: 0;
   }
@@ -3141,18 +3140,61 @@ button.submit-button.compact-button:hover {
     border-radius: 8px;
     font-size: 1.1rem;
   }
+   .nav-links > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
-  .nav-links .dropdown {
-    position: static;
-    display: none;
-    width: 100%;
-    background: rgba(30, 41, 59, 0.9);
-    box-shadow: none;
+.nav-links > li:has(.dropdown) {
+    background: rgba(30, 41, 59, 0.5);
     border-radius: 8px;
-    margin-top: 0.5rem;
-    padding: 0;
-    opacity: 1;
-    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: relative;
+  }
+  
+   .nav-links > li:has(.dropdown) > a {
+    flex-grow: 1;
+    text-align: center; /* Keep centered */
+    padding: 1rem 0;
+    margin: 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
+ .dropdown-arrow {
+    color: #ffffff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    user-select: none;
+    border-radius: 4px;
+    min-width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .dropdown-arrow:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+ .nav-links .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 0 0 8px 8px;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 100%;
+    margin: 0;
   }
   
   .nav-links .dropdown.active {
@@ -3160,12 +3202,39 @@ button.submit-button.compact-button:hover {
     flex-direction: column;
   }
   
-  .nav-links .dropdown li a {
-    padding: 0.8rem 1rem;
-    margin: 0.2rem 0.5rem;
-    font-size: 1rem;
+  .nav-links .dropdown li {
+    width: 100%;
+    margin: 0;
   }
-
+  
+  .nav-links .dropdown li a {
+    padding: 0.8rem 1.5rem;
+    margin: 0;
+    font-size: 0.95rem;
+    border-radius: 0;
+    color: #cbd5e1;
+  }
+  .nav-links .dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+ .nav-links > li:not(:has(.dropdown)) {
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   .nav-links > li:not(:has(.dropdown)) > a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
   /* Homepage hero section */
   .hero {
     height: 80vh;
@@ -3304,30 +3373,95 @@ button.submit-button.compact-button:hover {
   }
   
   /* Industries detail page */
-  .industries-detail {
-    padding: 2rem 1rem;
+.industries-detail {
+  padding: 2rem 1rem;
+}
+.industry-card {
+  display: flex !important;
+  flex-direction: column !important;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  /* Remove grid properties completely */
+  grid-template-columns: none !important;
+  grid-template-areas: none !important;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.industry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.industry-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  order: 1;
+  flex-shrink: 0;
+}
+.industry-card.reverse {
+  flex-direction: column !important;
+  grid-template-areas: none !important;
+}
+    .industry-card.reverse .industry-text {
+    text-align: justify !important;
   }
+
+.industry-text {
+  padding: 1.5rem;
+  order: 2;
+  flex-grow: 1;
+}
   
-  .industry-card {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+.industry-text h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.industry-text h3::before,
+.industry-text h3::after {
+  display: none !important;
+}
+    .industry-text h3::before {
+    width: 35px !important;
+    height: 35px !important;
+    margin-right: 10px !important;
+    margin-bottom: 3px !important;
   }
-  
-  .industry-image {
-    height: 200px;
-    order: -1; /* Image first on mobile */
-  }
-  
-  .industry-text h3 {
-    font-size: 1.5rem;
-  }
-  
-  .industry-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+.industry-text h3::after {
+  content: '';
+  display: block !important;
+  width: 200px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+.industry-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: justify;
+  margin: 0;
+  word-spacing: normal;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+.industry-card:last-child {
+  margin-bottom: 0;
+}
+  .industry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
   /* About us page */
   .about-hero {
@@ -3525,6 +3659,7 @@ html {
     gap: 2rem;
     font-size: 15px;
   }
+
   
   .logo-title {
     font-size: 1.7rem;
@@ -3621,5 +3756,10 @@ html {
   .contact-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+} 
+@media (min-width: 769px) {
+      .dropdown-arrow {
+    display: none !important;
   }
 }

@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
     this.classList.toggle('active');
     navLinks.classList.toggle('active');
     
-    // Prevent body scroll when menu is open
     if (navLinks.classList.contains('active')) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -169,26 +168,102 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Close menu when clicking on a link
-  const navItems = document.querySelectorAll('.nav-links a');
-  navItems.forEach(item => {
-    item.addEventListener('click', function() {
+  // Add arrows to dropdown parents and handle clicks
+  const servicesLi = document.querySelector('.nav-links > li:nth-child(2)'); // Services
+  const industriesLi = document.querySelector('.nav-links > li:nth-child(3)'); // Industries
+  
+  function setupDropdown(parentLi, linkSelector) {
+    if (!parentLi) return;
+    
+    const link = parentLi.querySelector('a');
+    const dropdown = parentLi.querySelector('.dropdown');
+    
+    if (!dropdown) return;
+    
+    // Create and add arrow
+    const arrow = document.createElement('span');
+    arrow.className = 'dropdown-arrow';
+    arrow.innerHTML = '▼';
+    parentLi.appendChild(arrow);
+    
+    // Main link - navigate directly
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        // Close menu and navigate
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // Arrow - toggle dropdown
+    arrow.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      if (window.innerWidth <= 768) {
+        // Close other dropdowns
+        const otherDropdowns = document.querySelectorAll('.dropdown');
+        const otherArrows = document.querySelectorAll('.dropdown-arrow');
+        
+        otherDropdowns.forEach(dd => {
+          if (dd !== dropdown) {
+            dd.classList.remove('active');
+          }
+        });
+        
+        otherArrows.forEach(arr => {
+          if (arr !== arrow) {
+            arr.style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current dropdown
+        if (dropdown.style.display === 'flex' || dropdown.classList.contains('active')) {
+          // Close it
+          dropdown.style.display = 'none';
+          dropdown.classList.remove('active');
+          arrow.style.transform = 'rotate(0deg)';
+        } else {
+          // Open it
+          dropdown.style.display = 'flex';
+          dropdown.classList.add('active');
+          arrow.style.transform = 'rotate(180deg)';
+        }
+      }
+    });
+  }
+  
+  // Setup both dropdowns
+  setupDropdown(servicesLi);
+  setupDropdown(industriesLi);
+  
+  // Close menu when clicking dropdown items
+  const dropdownLinks = document.querySelectorAll('.dropdown a');
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function() {
       hamburger.classList.remove('active');
       navLinks.classList.remove('active');
       document.body.style.overflow = 'auto';
+      
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown').forEach(dd => {
+        dd.style.display = 'none';
+        dd.classList.remove('active');
+      });
+      document.querySelectorAll('.dropdown-arrow').forEach(arr => {
+        arr.style.transform = 'rotate(0deg)';
+      });
     });
   });
   
-  // Handle dropdown menus on mobile
-  const dropdownParents = document.querySelectorAll('.nav-links > li:has(.dropdown)');
-  dropdownParents.forEach(parent => {
-    const link = parent.querySelector('a');
-    link.addEventListener('click', function(e) {
-      if (window.innerWidth < 1024) {
-        e.preventDefault();
-        const dropdown = this.nextElementSibling;
-        dropdown.classList.toggle('active');
-      }
+  // Close menu when clicking regular nav items
+  const regularLinks = document.querySelectorAll('.nav-links > li:first-child a, .nav-links > li:last-child a, .nav-links > li:nth-last-child(2) a');
+  regularLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = 'auto';
     });
   });
   
@@ -198,8 +273,36 @@ document.addEventListener('DOMContentLoaded', function() {
       hamburger.classList.remove('active');
       navLinks.classList.remove('active');
       document.body.style.overflow = 'auto';
+      
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown').forEach(dd => {
+        dd.style.display = 'none';
+        dd.classList.remove('active');
+      });
+      document.querySelectorAll('.dropdown-arrow').forEach(arr => {
+        arr.style.transform = 'rotate(0deg)';
+      });
     }
   });
+  
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      document.querySelectorAll('.dropdown').forEach(dd => {
+        dd.style.display = '';
+        dd.classList.remove('active');
+      });
+      document.querySelectorAll('.dropdown-arrow').forEach(arr => {
+        arr.style.transform = 'rotate(0deg)';
+      });
+    }
+  });
+
+
   
   // Industries carousel functionality
   const initCarousel = function() {
