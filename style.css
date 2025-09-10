@@ -227,27 +227,28 @@ nav .container {
 }
 .hero-combined-text {
     margin-top: 1.5rem;
-    max-width: 700px !important;
-     width: 700px;
+    max-width: 700px !important; /* Slightly reduced width */
+    width: 100% !important;
 }
 .hero-combined-text p {
     font-size: 1.1rem;
+     text-rendering: optimizeLegibility;
+    font-kerning: normal;
     color: #ffffff;
     line-height: 1.4;
     margin-bottom: 0;
     font-weight: 500;
     text-align: justify !important;
     text-justify: inter-word !important;
-    word-break: break-all;
+    word-break: break-word !important;
     hyphens: auto !important;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    -webkit-hyphens: auto !important;
+    -moz-hyphens: auto !important;
     letter-spacing: 0.3px;
     word-spacing: normal !important;
     animation: slideInLeft 1s ease-out 0.2s both;
     max-width: none !important;
 }
-
 .hero-video {
     position: absolute;
     top: 0;
@@ -276,9 +277,10 @@ nav .container {
     color: white;
     text-align: left;
     margin: 0;
-    flex:1;
-    padding-right: 700px; /* Reduced from 700px to give more space */
+    flex: 1;
+    padding-right: 550px; /* Reduced from 700px */
     width: 100%;
+    max-width: 1200px; /* Added max-width constraint */
 }
 
 .hero-about p {
@@ -316,7 +318,7 @@ nav .container {
     font-size: 0.95rem;
 }
 .hero-content h1 {
-    font-size: 4.5rem; /* Reduced from 6rem */
+    font-size: 3.2rem; /* Reduced from 3.5rem */
     font-weight: 900;
     background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 20%, #bae6fd 40%, #7dd3fc 60%, #38bdf8 80%, #0ea5e9 100%);
     background-size: 200% 200%;
@@ -325,9 +327,13 @@ nav .container {
     background-clip: text;
     animation: slideInLeft 1s ease-out, gradientFlow 3s ease-in-out infinite;
     text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px; /* Slightly reduced */
     position: relative;
     margin-bottom: 1rem;
+    white-space: nowrap;
+    padding-right: 0; /* Ensure no extra padding */
+    width: 100%; /* Ensure full width */
+    overflow: visible;
 }
 
 
@@ -3255,13 +3261,18 @@ button.submit-button.compact-button:hover {
   }
   
   .hero-combined-text p {
-    text-align: center !important;
-    font-size: 1rem !important;
-    line-height: 1.6;
+    text-align: start !important;
+    font-size: 0.9rem !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    overflow-wrap: break-word !important;
+word-break: break-word !important; /* legacy */
+    line-height: 1.5 !important;
   }
   
   .hero-content h1 {
-    font-size: 2.5rem !important;
+    font-size: 1.8rem !important;
     text-align: center;
     margin-bottom: 1.5rem;
   }
