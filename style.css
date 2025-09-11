@@ -2145,12 +2145,15 @@ blockquote::before {
     background-position: center, center;
 }
 
-#transportation .industry-text h3::before {
-    background: linear-gradient(135deg, #10b981, #059669);
+#power-water .industry-text h3::before {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
 
 #mining .industry-text h3::before {
     background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+#energy .industry-text h3::before {
+    background: linear-gradient(135deg, #10b981, #059669);
 }
 
 #marine .industry-text h3::before {
