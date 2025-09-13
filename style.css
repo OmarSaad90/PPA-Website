@@ -226,24 +226,50 @@ nav .container {
     overflow: hidden;
 }
 .hero-combined-text {
-    margin-top: 1.5rem;
-    max-width: 700px !important; /* Slightly reduced width */
+    margin-top: 0.3rem;
+    max-width: 600px !important; /* Reduced from 700px to make it smaller */
     width: 100% !important;
 }
+.hero-combined-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.2rem 0; /* Reduced from 1rem to bring closer */
+     animation: slideInLeft 1s ease-out 0.2s both;
+}
+.hero-combined-text li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.1rem; /* Reduced from 0.8rem to bring bullet points closer */
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.hero-combined-text li::before {
+    content: '•';
+    color: #3b82f6;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.hero-combined-text p + ul {
+    margin-top: 0;
+}
 .hero-combined-text p {
-    font-size: 1.1rem;
-     text-rendering: optimizeLegibility;
+    font-size: 0.95rem; /* Reduced from 1.1rem to make it smaller */
+    text-rendering: optimizeLegibility;
     font-kerning: normal;
     color: #ffffff;
-    line-height: 1.4;
+    line-height: 1.4; /* Slightly increased for better readability */
     margin-bottom: 0;
-    font-weight: 500;
-    text-align: justify !important;
-    text-justify: inter-word !important;
+    font-weight: 400; /* Changed from 500 to normal weight (400) */
+    text-align: left !important; /* Keep left alignment for better readability */
+    text-justify: none !important;
     word-break: break-word !important;
-    hyphens: auto !important;
-    -webkit-hyphens: auto !important;
-    -moz-hyphens: auto !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
     letter-spacing: 0.3px;
     word-spacing: normal !important;
     animation: slideInLeft 1s ease-out 0.2s both;
@@ -278,9 +304,10 @@ nav .container {
     text-align: left;
     margin: 0;
     flex: 1;
-    padding-right: 550px; /* Reduced from 700px */
+    padding-right: 550px;
+    padding-top: 200px; /* NEW: Move content down significantly */
     width: 100%;
-    max-width: 1200px; /* Added max-width constraint */
+    max-width: 1200px;
 }
 
 .hero-about p {
@@ -317,9 +344,35 @@ nav .container {
     margin-bottom: 0;
     font-size: 0.95rem;
 }
+.hero-cta-link {
+    display: inline-block;
+    margin-top: 0.3rem; /* Reduced from 1.5rem to bring closer */
+    padding: 0;
+    background: none; /* Remove background */
+    color: #ffffff !important; /* Blue text color */
+    text-decoration:none;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: none; /* Remove shadow */
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid transparent; /* Add subtle underline effect */
+}
+.hero-cta-link:hover {
+    background: none; /* Keep no background on hover */
+    color: #3b82f6 !important; /* Darker blue on hover */
+    transform: none; /* Remove transform */
+    box-shadow: none; /* Keep no shadow */
+    border-bottom: 1px solid #60a5fa; /* Add underline on hover */
+}
+
+.hero-cta-link::after {
+    content: none !important; /* Remove the underline effect */
+}
 .hero-content h1 {
-    font-size: 3.2rem; /* Reduced from 3.5rem */
-    font-weight: 900;
+    font-size: 2.5rem; /* Reduced from 3.5rem */
+    font-weight: 600;
     background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 20%, #bae6fd 40%, #7dd3fc 60%, #38bdf8 80%, #0ea5e9 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
@@ -329,7 +382,7 @@ nav .container {
     text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
     letter-spacing: 1.5px; /* Slightly reduced */
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom:0.3rem;
     white-space: nowrap;
     padding-right: 0; /* Ensure no extra padding */
     width: 100%; /* Ensure full width */
@@ -1079,6 +1132,42 @@ section {
   backdrop-filter: blur(20px);
   position: relative;
   z-index: 2;
+}
+/* Reset and fix Services and Industries hero sections */
+.services-hero .hero-content,
+.industries-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 0 !important; /* Reset any top padding */
+    display: block !important; /* Reset to normal block display */
+    height: auto !important; /* Reset height */
+}
+
+/* Title positioned at the top under nav/breadcrumb */
+.services-hero .hero-content h1,
+.industries-hero .hero-content h1 {
+    font-size: 2.8rem !important;
+    font-weight: 700;
+    margin-top: -10px !important; /* Keep title position */
+    margin-bottom: 0 !important; /* Remove bottom margin */
+}
+
+.services-hero .hero-content p,
+.industries-hero .hero-content p {
+    font-size: 1.2rem !important;
+    line-height: 1.6 !important;
+    color: #cbd5e1;
+    margin-top: 20px !important; /* This now controls the gap from title to text */
+    margin-bottom: 1.5rem !important;
+    max-width: 700px !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 .service-card h3 {
     margin: 1rem;
@@ -3242,6 +3331,28 @@ button.submit-button.compact-button:hover {
     width: 100% !important;
     max-width: 100% !important;
   }
+  .hero-combined-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+.hero-combined-text li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.hero-combined-text li::before {
+    content: '•';
+    color: #3b82f6;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
   
   .hero-combined-text p {
     text-align: start !important;
