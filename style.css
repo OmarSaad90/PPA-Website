@@ -227,12 +227,13 @@ nav .container {
 }
 .hero-combined-text {
     margin-top: 0.3rem;
-    max-width: 600px !important; /* Reduced from 700px to make it smaller */
+    max-width:1200px !important; /* Reduced from 700px to make it smaller */
     width: 100% !important;
 }
 .hero-combined-text ul {
     list-style: none;
     padding-left: 0;
+    font-size: 2rem;
     margin: 0.2rem 0; /* Reduced from 1rem to bring closer */
      animation: slideInLeft 1s ease-out 0.2s both;
 }
@@ -240,7 +241,7 @@ nav .container {
     position: relative;
     padding-left: 1.4rem;
     margin-bottom: 0.1rem; /* Reduced from 0.8rem to bring bullet points closer */
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -257,7 +258,7 @@ nav .container {
     margin-top: 0;
 }
 .hero-combined-text p {
-    font-size: 0.95rem; /* Reduced from 1.1rem to make it smaller */
+    font-size:1rem !important; /* Reduced from 1.1rem to make it smaller */
     text-rendering: optimizeLegibility;
     font-kerning: normal;
     color: #ffffff;
@@ -273,7 +274,7 @@ nav .container {
     letter-spacing: 0.3px;
     word-spacing: normal !important;
     animation: slideInLeft 1s ease-out 0.2s both;
-    max-width: none !important;
+    max-width: 1200px !important;
 }
 .hero-video {
     position: absolute;
@@ -305,21 +306,21 @@ nav .container {
     margin: 0;
     flex: 1;
     padding-right: 550px;
-    padding-top: 200px; /* NEW: Move content down significantly */
+    padding-top: 320px; /* NEW: Move content down significantly */
     width: 100%;
-    max-width: 1200px;
+    max-width: 1500px;
 }
 
 .hero-about p {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero-description p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #ffffff;
     line-height: 1.5;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.3);
@@ -371,7 +372,7 @@ nav .container {
     content: none !important; /* Remove the underline effect */
 }
 .hero-content h1 {
-    font-size: 2.5rem; /* Reduced from 3.5rem */
+    font-size: 2.6rem !important;
     font-weight: 600;
     background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 20%, #bae6fd 40%, #7dd3fc 60%, #38bdf8 80%, #0ea5e9 100%);
     background-size: 200% 200%;
@@ -393,7 +394,7 @@ nav .container {
 
 .hero-subtitle {
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: #ffffff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
@@ -404,7 +405,7 @@ nav .container {
     position: relative;
 }
 .hero-subtitle-extended {
-    font-size: 1.8rem; /* Reduced from 2.2rem */
+    font-size: 1.6rem; /* Reduced from 2.2rem */
     font-weight: 600;
     color: #ffffff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
@@ -882,7 +883,7 @@ section {
     margin-bottom: 1rem;
 }
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
     color: #1e293b;
 }
