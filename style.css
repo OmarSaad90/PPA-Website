@@ -227,8 +227,13 @@ nav .container {
 }
 .hero-combined-text {
     margin-top: 0.3rem;
-    max-width:1200px !important; /* Reduced from 700px to make it smaller */
+     max-width: 700px !important;
+    /* Reduced from 700px to make it smaller */
     width: 100% !important;
+}
+.hero .container {
+    max-width: none !important; /* Remove the container width limit in hero */
+    padding: 0 40px; /* Optional: add some side padding */
 }
 .hero-combined-text ul {
     list-style: none;
@@ -258,14 +263,14 @@ nav .container {
     margin-top: 0;
 }
 .hero-combined-text p {
-    font-size:1rem !important; /* Reduced from 1.1rem to make it smaller */
+    font-size: 1rem !important;
     text-rendering: optimizeLegibility;
     font-kerning: normal;
     color: #ffffff;
-    line-height: 1.4; /* Slightly increased for better readability */
+    line-height: 1.4;
     margin-bottom: 0;
-    font-weight: 400; /* Changed from 500 to normal weight (400) */
-    text-align: left !important; /* Keep left alignment for better readability */
+    font-weight: 400;
+    text-align: left !important;
     text-justify: none !important;
     word-break: break-word !important;
     hyphens: none !important;
@@ -274,7 +279,7 @@ nav .container {
     letter-spacing: 0.3px;
     word-spacing: normal !important;
     animation: slideInLeft 1s ease-out 0.2s both;
-    max-width: 1200px !important;
+    max-width: none !important; /* Increased from 1200px */
 }
 .hero-video {
     position: absolute;
@@ -373,7 +378,7 @@ nav .container {
 }
 .hero-content h1 {
     font-size: 2.6rem !important;
-    font-weight: 600;
+    font-weight: 500;
     background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 20%, #bae6fd 40%, #7dd3fc 60%, #38bdf8 80%, #0ea5e9 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
@@ -521,6 +526,29 @@ nav .container {
 .form-section,
 .contact-item {
     border-left: 3px solid #3b82f6 !important;
+}
+
+/* Fix for About page hero alignment */
+.about-hero .hero-content {
+    padding-right: 0 !important;
+    padding-top: 100px !important;
+    text-align: left !important; /* Keep container left-aligned */
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.about-hero .hero-content h1 {
+    text-align: left !important; /* Title aligned left with breadcrumbs */
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100%;
+}
+
+.about-hero .hero-content p {
+    text-align: center !important; /* Only the paragraph centered */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 800px; /* Limit paragraph width for better centering */
 }
 .about-us {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
@@ -1153,7 +1181,7 @@ section {
 .services-hero .hero-content h1,
 .industries-hero .hero-content h1 {
     font-size: 2.8rem !important;
-    font-weight: 700;
+    font-weight: 500;
     margin-top: -10px !important; /* Keep title position */
     margin-bottom: 0 !important; /* Remove bottom margin */
 }
@@ -2720,7 +2748,7 @@ blockquote::before {
 .contact-hero .hero-content h1.compact-title {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    font-weight: 700;
+    font-weight: 500;
     text-align: left !important;
     text-justify: none !important;
     hyphens: none !important;
