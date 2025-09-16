@@ -3354,6 +3354,7 @@ button.submit-button.compact-button:hover {
     padding-right: 0 !important;
     text-align: center;
     width: 100%;
+    transform: translateY(-60px);
   }
   
   .hero-combined-text {
@@ -3387,6 +3388,7 @@ button.submit-button.compact-button:hover {
     text-align: start !important;
     font-size: 0.9rem !important;
     hyphens: none !important;
+    margin-bottom: 80px;
     -webkit-hyphens: none !important;
     -moz-hyphens: none !important;
     overflow-wrap: break-word !important;
@@ -3397,7 +3399,7 @@ word-break: break-word !important; /* legacy */
   .hero-content h1 {
     font-size: 1.8rem !important;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom:2rem;
   }
   
   /* Hide video on mobile, show background image instead */
@@ -3448,6 +3450,9 @@ word-break: break-word !important; /* legacy */
     object-position: center;
     border-radius: 8px;
     padding-right: 60px;
+  }
+  .service-card-home .service-text p {
+    text-align: center;
   }
   /* Services detail page */
   .services-detail {
