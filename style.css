@@ -68,12 +68,12 @@ nav .container {
     transform: scale(1.05);
 }
 .logo img {
-    height: 50px;
+    height: 60px;
     margin-right: 12px;
-    vertical-align: middle;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    vertical-align: middle; 
     transition: all 0.3s ease;
+    width: auto;
+    
 }
 .logo-text {
     display: flex;
@@ -86,9 +86,6 @@ nav .container {
     font-weight: 800;
     color: #ffffff !important;
     line-height: 1.1;
-}
-.logo:hover img {
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
 }
 
 
@@ -1447,11 +1444,11 @@ section {
 .carousel-container {
     display: flex;
     transition: transform 0.8s ease;
-    width: 600%; /* Changed from 500% - now 6 slides × 100% each */
+    width: 700%; /* Changed from 500% - now 6 slides × 100% each */
 }
 
 .carousel-slide {
-    width: 16.67%; /* Changed from 20% - now 100% ÷ 6 slides = 16.67% */
+    width: 14.285714%; /* Changed from 20% - now 100% ÷ 6 slides = 16.67% */
     height: 400px;
     flex-shrink: 0;
 }
