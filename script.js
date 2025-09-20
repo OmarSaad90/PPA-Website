@@ -338,9 +338,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function startAutoSlide() {
       autoSlideInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % slideCount;
-        updateCarousel();
+       // updateCarousel();
       }, 5000);
-    }
+    } //
     
     function stopAutoSlide() {
       clearInterval(autoSlideInterval);
@@ -350,8 +350,8 @@ document.addEventListener('DOMContentLoaded', function() {
       prevBtn.addEventListener('click', () => {
         stopAutoSlide();
         currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        updateCarousel();
-        startAutoSlide();
+        //updateCarousel();
+        //startAutoSlide();
       });
     }
     
@@ -359,8 +359,8 @@ document.addEventListener('DOMContentLoaded', function() {
       nextBtn.addEventListener('click', () => {
         stopAutoSlide();
         currentIndex = (currentIndex + 1) % slideCount;
-        updateCarousel();
-        startAutoSlide();
+        //updateCarousel();
+       // startAutoSlide();
       });
     }
     
@@ -368,21 +368,21 @@ document.addEventListener('DOMContentLoaded', function() {
       dot.addEventListener('click', () => {
         stopAutoSlide();
         currentIndex = index;
-        updateCarousel();
-        startAutoSlide();
+        //updateCarousel();
+        //startAutoSlide();
       });
     });
     
     // Auto-advance carousel
-    startAutoSlide();
+    //startAutoSlide();
     
     // Pause auto-slide on hover
-    carousel.addEventListener('mouseenter', stopAutoSlide);
-    carousel.addEventListener('mouseleave', startAutoSlide);
+    //carousel.addEventListener('mouseenter', stopAutoSlide);
+    //carousel.addEventListener('mouseleave', startAutoSlide);
   };
   
   initCarousel();
-  
+  /*
   // Form submission handling
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -414,7 +414,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
+*/
+});
   // Smooth scrolling for nav links -------------------------
   function setupSmoothScroll() {
     qsa('a[href*="#"]').forEach(a => {
@@ -634,14 +635,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function stopAutoplay() { if (timer) clearInterval(timer); timer = null; }
 
     // Buttons
-    if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoplay(); next(); startAutoplay(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoplay(); prev(); startAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoplay(); next();});
+    if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoplay(); prev();});
 
     // Dots (click + keyboard)
     dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => { stopAutoplay(); goTo(i); startAutoplay(); });
+      dot.addEventListener('click', () => { stopAutoplay(); goTo(i);});
       dot.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stopAutoplay(); goTo(i); startAutoplay(); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stopAutoplay(); goTo(i); }
       });
     });
 
@@ -669,7 +670,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTransform();
       }
       isSwiping = false;
-      startAutoplay();
+      //startAutoplay();
     };
 
     carousel.addEventListener('touchstart', onTouchStart, { passive: true });
@@ -679,23 +680,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Keyboard arrows on carousel region
     carousel.setAttribute('tabindex', '0');
     carousel.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') { stopAutoplay(); next(); startAutoplay(); }
-      if (e.key === 'ArrowLeft')  { stopAutoplay(); prev(); startAutoplay(); }
+      if (e.key === 'ArrowRight') { stopAutoplay(); next();}
+      if (e.key === 'ArrowLeft')  { stopAutoplay(); prev();}
     });
 
     // Pause on hover
     carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
 
     // Pause when tab is hidden
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) stopAutoplay(); else startAutoplay();
+      if (document.hidden) stopAutoplay();
     });
 
     // Init
     index = 0;
     updateTransform();
-    startAutoplay();
+    //startAutoplay();
   }
 
   // Boot ---------------------------------------------------
@@ -707,7 +707,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupCarousel();
     setupServiceSearch();
     setupIndustrySearch();
-    setupMobileNavigation();
   });
 
 })();

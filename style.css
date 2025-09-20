@@ -65,10 +65,10 @@ nav .container {
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 .logo img {
-    height: 60px;
+    height: 63px;
     margin-right: 12px;
     vertical-align: middle; 
     transition: all 0.3s ease;
