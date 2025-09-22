@@ -2440,14 +2440,15 @@ blockquote::before {
 
 .about-card {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
     background: white;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    padding: 1.5rem;
+    padding: 2rem;
     align-items: center;
-    max-width: 800px;
+    max-width: 1200px;
     position: relative;
+    min-height: 400px;
     margin: 0 auto 4rem auto; /* Center all cards with consistent bottom margin */
 }
 #team.about-card,
@@ -2651,8 +2652,8 @@ blockquote::before {
 }
 
 .about-image {
-    max-width: 280px;
-    height: 350px;
+    max-width: 380px;
+    height: 450px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 
@@ -2662,6 +2663,7 @@ blockquote::before {
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-shrink: 0;
     background: linear-gradient(135deg, #f8fafc, #e2e8f0);
 }
 .about-card:hover .about-image::before {
@@ -3252,36 +3254,40 @@ button.submit-button.compact-button:hover {
   }
   
 .nav-links > li:has(.dropdown) {
-    background: rgba(30, 41, 59, 0.5);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    position: relative;
-  }
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 8px;
+  display: flex;              /* back to flex */
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+  padding: 0;
+  position: relative;
+}
   
-   .nav-links > li:has(.dropdown) > a {
-    flex-grow: 1;
-    text-align: center; /* Keep centered */
-    padding: 1rem 0;
-    margin: 0;
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-decoration: none;
-  }
- .dropdown-arrow {
-    color: #ffffff;
-    font-size: 0.8rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
-    user-select: none;
-    border-radius: 4px;
-    min-width: 30px;
-    text-align: center;
-    flex-shrink: 0;
-  }
+.nav-links > li:has(.dropdown) > a {
+  flex: none;     
+  width:100%;               /* take full width for centering */
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.dropdown-arrow {
+  color: #ffffff;
+  position: absolute;
+  right: 5px;
+  top: 50%;                     /* vertically center */
+  transform: translateY(-50%);  /* adjust for true centering */
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+  user-select: none;
+  border-radius: 4px;
+  min-width: 30px;
+  text-align: center;
+}
+
   .dropdown-arrow:hover {
     background: rgba(255, 255, 255, 0.1);
   }
@@ -3611,7 +3617,16 @@ word-break: break-word !important; /* legacy */
     .carousel-arrow.next {
         right: 5px; /* Even closer on mobile */
     }
-
+  .founder-education,
+  .founder-credentials,
+  .education-items,
+  .credential-items,
+  .education-item,
+  .credential {
+    text-align: left !important;
+    display: block; /* ensures each item lines up nicely */
+    margin-bottom: 0.4rem;
+  }
   /* About us page */
 .about-hero {
     position: relative;
@@ -3712,7 +3727,7 @@ word-break: break-word !important; /* legacy */
     box-shadow: 
         0 8px 32px rgba(0,0,0,0.08),
         inset 0 1px 0 rgba(255,255,255,0.5);
-    padding: 2.5rem;
+    padding: 1.5rem;
     align-items: center;
     max-width: 900px;
     position: relative;
@@ -3735,9 +3750,10 @@ word-break: break-word !important; /* legacy */
 }
   
   .about-image {
-    max-width: 100%;
+    max-width: 300px;
     margin-top: 1.5rem;
-    height: 250px;
+    height: 350px;
+    width:300px;
   }
   
   .values-container {
@@ -3883,6 +3899,7 @@ word-break: break-word !important; /* legacy */
   .motto-text .section-description,
   .services-text .section-description,
   .section-description,
+  
   .industry-tab p {
     text-align: center;
   }
