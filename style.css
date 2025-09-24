@@ -2020,7 +2020,41 @@ blockquote::before {
 .founder-associations {
     margin-top: 1.5rem;
 }
+#team.about-card {
+    min-height: 320px; /* Only affects the founder card */
+}
 
+#team .about-image {
+    max-width: 300px; /* Only affects founder image */
+    width: 300px;
+    height: 360px;
+}
+
+#team .founder-profile {
+    margin-top: 1rem;
+}
+
+#team .founder-profile h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+#team .founder-title {
+    margin-bottom: 1rem !important;
+}
+
+#team .founder-education,
+#team .founder-credentials,
+#team .founder-associations {
+    margin-top: 1rem;
+}
+
+#team .education-item,
+#team .credential,
+#team .association {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
 .founder-education h5,
 .founder-credentials h5,
 .founder-associations h5 {
