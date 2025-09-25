@@ -3255,6 +3255,11 @@ button.submit-button.compact-button:hover {
   .hamburger {
     display: flex;
   }
+   nav .container {
+        padding-left: 50px; /* Push everything away from left edge */
+        padding-right: 20px;
+        padding-top:10px;
+    }
  .nav-links {
     position: fixed;
     top: 70px;
