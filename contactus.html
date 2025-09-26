@@ -51,7 +51,7 @@
                     <li><a href="industries.html#infrastructure">Infrastructure</a></li>
                     <li><a href="industries.html#power-water">Energy & Utilities</a></li>
                     <li><a href="industries.html#energy">Residential & Commercial</a></li>
-                    <li><a href="industries.html#Healthcare">Heahlthcare</a></li>
+                    <li><a href="industries.html#Healthcare">Healthcare</a></li>
                     <li><a href="industries.html#mining">Mining</a></li>
                     <li><a href="industries.html#marine-works">Marine Works</a></li>
                 </ul>
@@ -146,14 +146,54 @@
                         </div>
 
                         <!-- Consent -->
-                        <div class="form-section consent-section">
-                            <div class="consent-box compact-consent">
-                                <input type="checkbox" id="consent" name="consent" value="agreed" required>
-                                <label for="consent">
-                                    By submitting this form, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>. *
-                                </label>
-                            </div>
-                        </div>
+                     <div class="form-section consent-section">
+  <div class="consent-box compact-consent">
+    <input type="checkbox" id="consent" name="consent" value="agreed" required>
+    <label for="consent">
+      By submitting this form, you agree to our 
+      <a href="javascript:void(0);" onclick="openModal('privacyModal')">Privacy Policy</a> 
+      and 
+      <a href="javascript:void(0);" onclick="openModal('termsModal')">Terms of Service</a>. *
+    </label>
+  </div>
+</div>
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+      <h2>Privacy Policy</h2>
+      <p>We only collect the information you choose to share with us, such as when you fill out our contact form. 
+Your data is used only to respond to your inquiry and improve our services. </p>
+    </div>
+  </div>
+
+  <!-- Terms Modal -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('termsModal')">&times;</span>
+      <h2>Terms of Service</h2>
+      <p>This website provides general information about our consulting services. 
+All content is the property of PPA Consulting and may not be reused without permission. 
+We are not responsible for third-party links or reliance on information provided here. </p>
+    </div>
+  </div>
+    <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Close modal when clicking outside the box
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(m => {
+        if (event.target === m) {
+          m.style.display = "none";
+        }
+      });
+    }
+  </script>
 
                         <div id="form-status"></div>
                         <!-- Submit Button -->
